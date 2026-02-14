@@ -1,0 +1,92 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark">
+
+    <div class="layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h2>LIFJARZ</h2>
+            <nav>
+                <a class="active" onclick="showDashboard()">Dashboard</a>
+                <a onclick="showProduk()">Produk</a>
+                <a onclick="showPromo()">Promo</a>
+                <a onclick="logout()">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <h1>Admin Dashboard</h1>
+                <div class="user-info">
+                    <span>Admin Panel</span>
+                </div>
+            </header>
+
+            <!-- CONTENT -->
+            <div class="container">
+
+                <!-- ================= DASHBOARD ================= -->
+                <section id="dashboardSection" class="stats">
+                    <div class="stat-card">
+                        <h3>Total Produk</h3>
+                        <p id="totalProduk">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Transaksi</h3>
+                        <p>0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Omzet</h3>
+                        <p id="totalOmzet">Rp 0</p>
+                    </div>
+                </section>
+
+                <!-- ================= PRODUK ================= -->
+                <section id="produkSection" class="section-box" style="display:none;">
+                    <div class="section-header">
+                        <h2>Manajemen Produk</h2>
+                    </div>
+
+                    <div class="form-grid">
+                        <input id="productName" placeholder="Nama Produk">
+                        <input id="productPrice" type="number" placeholder="Harga">
+                        <button class="btn-primary" onclick="addProduct()">Tambah</button>
+                    </div>
+
+                    <div id="productList" class="grid"></div>
+                </section>
+
+                <!-- ================= PROMO ================= -->
+                <section id="promoSection" class="section-box" style="display:none;">
+                    <div class="section-header">
+                        <h2>Manajemen Promo</h2>
+                    </div>
+
+                    <div class="form-grid">
+                        <input id="promoCode" placeholder="Kode Promo">
+                        <select id="promoType">
+                            <option value="percent">Diskon %</option>
+                            <option value="fixed">Nominal</option>
+                        </select>
+                        <input id="promoValue" type="number" placeholder="Nilai">
+                        <input id="promoExpire" type="date">
+                        <button class="btn-primary" onclick="addPromo()">Tambah Promo</button>
+                    </div>
+
+                    <div id="promoList" class="grid"></div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
